@@ -31,24 +31,27 @@ const maxWord = words => {
 };
 
 const rangeOfWords = words => {
+  let wordArrayTotal = [];
   let wordArray = [];
   for (let word in words) {
-    if (words[word] < 100 && words[word] > 5) {
+    if (words[word]) {
+      wordArrayTotal.push({ [word]: words[word] });
+    }
+  }
+
+  for (let word in words) {
+    if (words[word] < 500 && words[word] > 5) {
       wordArray.push({ [word]: words[word] });
     }
   }
-  fs.writeFile('words.csv', JSON.stringify(wordArray), err => {
-    if (err) throw err;
-    console.log('The file has been saved');
-  });
 
-  return wordArray;
+  console.log(wordArrayTotal.length);
+
+  return wordArray.sort((a, b) => {
+    return Object.values(b)[0] - Object.values(a)[0];
+  });
 };
 
 // console.log(maxWord(dreamWordsCount));
 
-console.log(
-  rangeOfWords(dreamWordsCount).sort((a, b) => {
-    return a - b;
-  })
-);
+console.log(rangeOfWords(dreamWordsCount));
