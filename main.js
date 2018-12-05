@@ -37,9 +37,6 @@ const rangeOfWords = words => {
     if (words[word]) {
       wordArrayTotal.push({ [word]: words[word] });
     }
-  }
-
-  for (let word in words) {
     if (words[word] < 500 && words[word] > 5) {
       wordArray.push({ [word]: words[word] });
     }
