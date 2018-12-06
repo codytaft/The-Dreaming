@@ -1,5 +1,5 @@
 const dreams = require('./dreaming.json');
-const fs = require('fs');
+// const fs = require('fs');
 
 let dreamWordsCount = {};
 

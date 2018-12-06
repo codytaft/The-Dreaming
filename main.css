@@ -1,15 +1,15 @@
-#huntr-react-container-2 {
-  display: none;
-}
 body {
   background-color: #1b1d21;
-  width: 100vw;
+  font-family: 'Dosis', sans-serif;
+  font-variant: small-caps;
   height: 100vh;
   margin: 0;
 }
 
 h1 {
   color: whitesmoke;
-  margin: 1rem auto;
-  width: 100%;
+  font-size: 5rem;
+  font-weight: 200;
+  padding: 1rem 0;
+  text-align: center;
 }

@@ -1,0 +1,20 @@
+{
+  "name": "the-dreaming",
+  "version": "1.0.0",
+  "description": "dream work",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codytaft/The-Dreaming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codytaft/The-Dreaming/issues"
+  },
+  "homepage": "https://github.com/codytaft/The-Dreaming#readme"
+}
