@@ -1,4 +1,4 @@
-const dreams = require('./dreaming.json');
+const dreams = require('./dreams/dreaming.json');
 // const fs = require('fs');
 
 let dreamWordsCount = {};
