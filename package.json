@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/codytaft/The-Dreaming/issues"
   },
-  "homepage": "https://github.com/codytaft/The-Dreaming#readme"
+  "homepage": "https://github.com/codytaft/The-Dreaming#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  }
 }
