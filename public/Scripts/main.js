@@ -1,4 +1,4 @@
-const dreams = require('./dreams/dreaming.json');
+const dreams = require('../../dreams/dreaming.json');
 // const fs = require('fs');
 
 let dreamWordsCount = {};
@@ -49,6 +49,6 @@ const rangeOfWords = words => {
   });
 };
 
-// console.log(maxWord(dreamWordsCount));
+const wordCount = dreamWordsCount.length;
 
 console.log(rangeOfWords(dreamWordsCount));

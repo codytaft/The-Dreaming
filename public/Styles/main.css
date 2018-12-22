@@ -6,10 +6,16 @@ body {
   margin: 0;
 }
 
+.welcome-title {
+  color: whitesmoke;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+}
+
 h1 {
   color: whitesmoke;
   font-size: 5rem;
   font-weight: 200;
-  padding: 1rem 0;
   text-align: center;
 }
