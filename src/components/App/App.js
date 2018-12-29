@@ -12,9 +12,9 @@ class App extends Component {
       <div className="app">
         <Header />
         <div className="app-body">
-          <Route path="/login" component={Login} />
+          {/* <Route path="/login" component={Login} /> */}
           <Route path="/home" component={Home} />
-          <Redirect from="/" to="login" />
+          <Redirect from="/" to="home" />
         </div>
         <Cloud />
       </div>
