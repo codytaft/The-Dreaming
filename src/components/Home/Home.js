@@ -20,6 +20,13 @@ class Home extends Component {
     // add to database
   };
 
+  todaysDate = e => {
+    let curr = new Date();
+    curr.setDate(curr.getDate());
+    let date = curr.toISOString().substr(0, 10);
+    return date;
+  };
+
   render() {
     return (
       <main className="app-home">
@@ -30,6 +37,7 @@ class Home extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             className="date-input"
+            defaultValue={this.todaysDate()}
           />
           <textarea
             type="text"
