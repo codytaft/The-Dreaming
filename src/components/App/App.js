@@ -13,8 +13,9 @@ class App extends Component {
         <Header />
         <div className="app-body">
           {/* <Route path="/login" component={Login} /> */}
-          <Route path="/home" component={Home} />
-          <Redirect from="/" to="home" />
+          {/* <Route path="/home" component={Home} /> */}
+          {/* <Redirect from="/" to="home" /> */}
+          <Home />
         </div>
         <Cloud />
       </div>
