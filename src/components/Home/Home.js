@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { postDreams } from '../../utilities/apicalls';
 import './Home.css';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      date: '',
+      date: this.todaysDate(),
       dream: ''
     };
   }
@@ -15,9 +16,13 @@ class Home extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    // add to database
+    await postDreams(this.state.date, this.state.dream);
+    this.setState({
+      date: this.todaysDate(),
+      dream: ''
+    });
   };
 
   todaysDate = e => {
@@ -34,14 +39,14 @@ class Home extends Component {
           <input
             type="date"
             name="date"
-            value={this.state.value}
+            value={this.state.date}
             onChange={this.handleChange}
             className="date-input"
-            defaultValue={this.todaysDate()}
+            // defaultValue={this.todaysDate()}
           />
           <textarea
             type="text"
-            value={this.state.value}
+            value={this.state.dream}
             onChange={this.handleChange}
             name="dream"
             className="dream-input"
