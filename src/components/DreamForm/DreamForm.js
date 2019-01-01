@@ -10,6 +10,8 @@ class DreamForm extends Component {
     this.conversationState = null;
     this.voiceRequest = null;
     this.clientID = 'hiEsVW0ez3-afuRuemSwdw==';
+    this.clientKey =
+      'CQ-g7qnvhmSDZEKzUDQjvHVIKraA5sLI-w9yvwPTq3v7dBJ_ree5nPW-FaqAtuirQcnOG4iobk8ojeh66LADsA==';
     const me = this;
 
     recorder.on('start', function() {
@@ -68,14 +70,13 @@ class DreamForm extends Component {
   initVoiceRequest = sampleRate => {
     this.refs.ResponseJSON.parentNode.hidden = true;
     this.refs.InfoJSON.parentNode.hidden = true;
-
-    var voiceRequest = new Houndify.VoiceRequest({
+    let voiceRequest = new Houndify.VoiceRequest({
       //Your Houndify Client ID
       clientId: this.clientID,
 
       //For testing environment you might want to authenticate on frontend without Node.js server.
       //In that case you may pass in your Houndify Client Key instead of "authURL".
-      //clientKey: "YOUR_CLIENT_KEY",
+      // clientKey: this.clientKey,
 
       //Otherwise you need to create an endpoint on your server
       //for handling the authentication.
@@ -85,7 +86,7 @@ class DreamForm extends Component {
       //REQUEST INFO JSON
       //See https://houndify.com/reference/RequestInfo
       requestInfo: {
-        UserID: 'test_user',
+        UserID: 'cody',
         Latitude: 37.388309,
         Longitude: -121.973968
       },
@@ -129,28 +130,6 @@ class DreamForm extends Component {
     this.refs.Microphone.className = 'loading circle notched icon big';
     this.refs.SearchButton.disabled = true;
     this.refs.Dream.readOnly = true;
-  };
-
-  onFileUpload = () => {
-    var reader = new FileReader();
-    reader.onload = function() {
-      //In browsers only you can also upload and decode
-      //audio file using decodeArrayBuffer() method
-      //Stream 8/16 kHz mono 16-bit little-endian PCM samples
-      //in Int16Array() chunks to backend
-      var arrayBuffer = reader.result;
-      Houndify.decodeAudioData(arrayBuffer, function(err, result) {
-        this.refs.Status.innerText = 'Streaming audio from file...';
-        let voiceRequest = this.initVoiceRequest(result.sampleRate);
-        voiceRequest.write(result.audioData);
-        voiceRequest.end();
-      });
-
-      this.refs.Status.innerText = 'Decoding audio from file...';
-    };
-
-    var file = document.getElementById('file').files[0];
-    reader.readAsArrayBuffer(file);
   };
 
   //Fires after server responds with Response JSON
