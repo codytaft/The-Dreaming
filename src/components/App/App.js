@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+// import { Route, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
-import Login from '../Login/Login';
-import Home from '../Home/Home';
+// import Login from '../Login/Login';
+import DreamForm from '../DreamForm/DreamForm';
 import Cloud from '../Cloud/Cloud';
 import './App.css';
 
@@ -15,7 +15,7 @@ class App extends Component {
           {/* <Route path="/login" component={Login} /> */}
           {/* <Route path="/home" component={Home} /> */}
           {/* <Redirect from="/" to="home" /> */}
-          <Home />
+          <DreamForm />
         </div>
         <Cloud />
       </div>

@@ -1,0 +1,47 @@
+.dream-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+.date-input {
+  background: #282c34;
+  outline: none;
+  color: whitesmoke;
+  padding: 0.2rem;
+}
+.dream-input {
+  height: 10rem;
+  margin-top: 1rem;
+  text-align: left;
+  background: #282c34;
+  outline: none;
+  color: whitesmoke;
+  padding: 0.3rem;
+}
+
+.save-dream-btn {
+  background: none;
+  color: whitesmoke;
+  border: solid 0.1rem whitesmoke;
+  margin-top: 1rem;
+  border-radius: 0.1rem;
+}
+
+.save-dream-btn:hover {
+  background: whitesmoke;
+  color: #282c34;
+  border: solid 0.1rem black;
+  outline: none;
+}
+
+.save-dream-btn:active {
+  background: none;
+  color: whitesmoke;
+  border: solid 0.1rem whitesmoke;
+  margin-top: 1rem;
+  border-radius: 0.1rem;
+  outline: none;
+}
