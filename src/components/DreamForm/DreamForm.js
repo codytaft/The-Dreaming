@@ -5,7 +5,6 @@ import './DreamForm.css';
 class DreamForm extends Component {
   constructor() {
     super();
-
     this.state = {
       date: this.todaysDate(),
       dream: ''
@@ -45,20 +44,12 @@ class DreamForm extends Component {
             className="date-input"
           />
           <textarea
-            ref="Dream"
             type="text"
             value={this.state.dream}
             onChange={this.handleChange}
             name="dream"
             className="dream-input"
-            placeholder="Click on microphone icon or type in dream"
           />
-          <div
-            className="ui icon basic label button"
-            onClick={this.onMicrophoneClick}
-          >
-            <i id="voiceIcon" ref="Microphone" className="unmute big icon" />
-          </div>
           <button className="save-dream-btn" ref="SearchButton">
             Save Dream
           </button>

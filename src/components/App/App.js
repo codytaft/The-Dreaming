@@ -4,9 +4,25 @@ import Header from '../Header/Header';
 // import Login from '../Login/Login';
 import DreamForm from '../DreamForm/DreamForm';
 import Cloud from '../Cloud/Cloud';
+import { getAllDreams } from '../../utilities/apicalls';
+import { dreamCounter } from '../../utilities/dreamCounter';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      allDreams: [],
+      dreamWords: []
+    };
+  }
+
+  componentDidMount = async () => {
+    let allDreams = await getAllDreams();
+    let dreamWords = await dreamCounter(allDreams);
+    this.setState({ allDreams, dreamWords });
+  };
+
   render() {
     return (
       <div className="app">
@@ -17,7 +33,7 @@ class App extends Component {
           {/* <Redirect from="/" to="home" /> */}
           <DreamForm />
         </div>
-        <Cloud />
+        <Cloud dreams={this.state.dreamWords} />
       </div>
     );
   }

@@ -14,7 +14,9 @@
     "react-google-login": "^4.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.2",
-    "utf-8-validate": "^5.0.2"
+    "utf-8-validate": "^5.0.2",
+    "zingchart": "^2.8.4",
+    "zingchart-react": "^1.0.6"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
